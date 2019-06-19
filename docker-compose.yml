@@ -4,6 +4,7 @@ services:
   nginx-proxy:
     image: jwilder/nginx-proxy:alpine
     container_name: nginx-proxy
+    restart: always
     ports:
       - "80:80"
     volumes:
@@ -11,5 +12,6 @@ services:
 
   whoami:
     image: jwilder/whoami
+    restart: always
     environment:
       - VIRTUAL_HOST=whoami.local
